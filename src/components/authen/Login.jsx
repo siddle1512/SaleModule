@@ -15,7 +15,7 @@ const Login = (props) => {
             setLoading(true);
 
             // Make a POST request to the login API endpoint
-            const response = await fetch("https://localhost:7196/api/account/login", {
+            const response = await fetch(import.meta.env.VITE_API_ENDPOINT + "/api/account/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -31,7 +31,7 @@ const Login = (props) => {
             if (response.ok) {
                 // Login successful, you can handle the response data accordingly
                 console.log(data.message);
-                navigate("/dashboard"); // Redirect to the dashboard or any other page
+                navigate("/SaleModule/dashboard"); // Redirect to the dashboard or any other page
             } else {
                 // Login failed, update error messages
                 setEmailError("Invalid Email or Password");
