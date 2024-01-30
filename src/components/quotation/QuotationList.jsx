@@ -19,7 +19,7 @@ const QuotationList = () => {
   useEffect(() => {
     const fetchQuotations = async () => {
       try {
-        const response = await fetch('https://localhost:7196/api/Quotation');
+        const response = await fetch(import.meta.env.VITE_API_ENDPOINT + '/api/Quotation');
         if (response.ok) {
           const data = await response.json();
           console.log(data);
@@ -34,7 +34,7 @@ const QuotationList = () => {
 
     const fetchCustomers = async () => {
       try {
-        const response = await fetch('https://localhost:7196/api/Customers');
+        const response = await fetch(import.meta.env.VITE_API_ENDPOINT + '/api/Customers');
         if (response.ok) {
           const data = await response.json();
           setCustomers(data);
@@ -48,7 +48,7 @@ const QuotationList = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://localhost:7196/api/Products');
+        const response = await fetch(import.meta.env.VITE_API_ENDPOINT + '/api/Products');
         if (response.ok) {
           const data = await response.json();
           setProducts(data);
@@ -78,7 +78,7 @@ const QuotationList = () => {
   //fetch
   const fetchQuotations = async () => {
     try {
-      const response = await fetch('https://localhost:7196/api/Quotation');
+      const response = await fetch(import.meta.env.VITE_API_ENDPOINT + '/api/Quotation');
       if (response.ok) {
         const data = await response.json();
         console.log(data);
@@ -95,7 +95,7 @@ const QuotationList = () => {
 
   const handleConfirmQuotation = async (id) => {
     try {
-      const response = await fetch(`https://localhost:7196/api/Quotation/${id}/confirm`, {
+      const response = await fetch(import.meta.env.VITE_API_ENDPOINT + `/api/Quotation/${id}/confirm`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ const QuotationList = () => {
 
   const handleCancelQuotation = async (id) => {
     try {
-      const response = await fetch(`https://localhost:7196/api/Quotation/${id}/cancel`, {
+      const response = await fetch(import.meta.env.VITE_API_ENDPOINT + `/api/Quotation/${id}/cancel`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ const QuotationList = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          const response = await fetch(`https://localhost:7196/api/Quotation/${id}`, {
+          const response = await fetch(import.meta.env.VITE_API_ENDPOINT + `/api/Quotation/${id}`, {
             method: 'DELETE',
             headers: {
               'Content-Type': 'application/json',
@@ -222,7 +222,7 @@ const QuotationList = () => {
     }
 
     try {
-      const response = await fetch('https://localhost:7196/api/Quotation', {
+      const response = await fetch(import.meta.env.VITE_API_ENDPOINT + '/api/Quotation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

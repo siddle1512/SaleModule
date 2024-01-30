@@ -13,7 +13,7 @@ const Home = (props) => {
             props.setEmail("");
         } else {
             // Navigate to the login page
-            navigate("/login");
+            navigate("/SaleModule/login");
         }
     };
 

@@ -25,19 +25,19 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route
-            path="/"
+            path="/SaleModule/"
             element={<Home email={email} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
           />
           <Route
-            path="/login"
+            path="/SaleModule/login"
             element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />}   
           />
           <Route
-            path="/quotation"
+            path="/SaleModule/quotation"
             element={<QuotationList />}
           />
           <Route
-            path="/SellerCrud"
+            path="/SaleModule/SellerCrud"
             element={<SellerCrud />}
           />
         </Routes>
